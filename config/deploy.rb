@@ -50,3 +50,5 @@ namespace :deploy do
   after :finishing, 'deploy:cleanup'
 
 end
+
+set :default_env, { rvm_bin_path: '~/.rvm/bin' }
