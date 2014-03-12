@@ -2,7 +2,7 @@
 lock '3.1.0'
 
 set :application, 'digital-ocean'
-set :repo_url, 'jchasefreeman@github:jchasefreeman/digital-ocean.git'
+set :repo_url, 'jchasefreeman@github:digital-ocean.git'
 
 set :linked_files, %w{config/database.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
