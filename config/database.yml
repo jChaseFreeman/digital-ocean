@@ -18,8 +18,12 @@ test:
   pool: 5
   timeout: 5000
 
-production:
-  adapter: sqlite3
-  database: db/production.sqlite3
+production: 
+  host: localhost
+  adapter: postgresql
+  database: remotepg_production
+  username: chase
+  password: leadbelly
+  database: db/production.pg
   pool: 5
   timeout: 5000
