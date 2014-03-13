@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/capistrano/rvm.git
+  revision: dc35ec5e7a74a422250bd6ff5e8885c8b742d0e5
+  specs:
+    capistrano-rvm (0.1.1)
+      capistrano (~> 3.0)
+      sshkit (~> 1.2)
+
+GIT
   remote: git://github.com/refinery/refinerycms-acts-as-indexed.git
   revision: 231d35d398926c541bdc7138ea7efa3b3ffb69af
   specs:
@@ -112,9 +120,6 @@ GEM
     capistrano-rails (1.1.1)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
-    capistrano-rvm (0.1.1)
-      capistrano (~> 3.0)
-      sshkit (~> 1.2)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -180,6 +185,7 @@ GEM
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     orm_adapter (0.5.0)
+    pg (0.17.1)
     polyglot (0.3.4)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -256,11 +262,12 @@ DEPENDENCIES
   capistrano (~> 3.1.0)
   capistrano-bundler (~> 1.1.2)
   capistrano-rails (~> 1.1.1)
-  capistrano-rvm
+  capistrano-rvm!
   coffee-rails (~> 4.0.0)
   foundation-rails (= 5.0.3.1)
   jbuilder (~> 1.2)
   jquery-rails
+  pg
   rails (= 4.0.2)
   refinerycms!
   refinerycms-acts-as-indexed!
