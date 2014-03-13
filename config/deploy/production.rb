@@ -4,9 +4,9 @@
 # server in each group is considered to be the first
 # unless any hosts have the primary property set.
 # Don't declare `role :all`, it's a meta role
-role :app, %w{deploy@example.com}
-role :web, %w{deploy@example.com}
-role :db,  %w{deploy@example.com}
+role :app, %w{deploy@107.170.54.97}
+role :web, %w{deploy@107.170.54.97}
+role :db,  %w{deploy@107.170.54.97}
 
 # Extended Server Syntax
 # ======================
@@ -37,3 +37,28 @@ server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
 #     # password: 'please use keys'
 #   }
 # setting per server overrides global ssh_options
+
+set :application, 'digital-ocean'
+set :repo_url, 'git@github.com:jChaseFreeman/digital-ocean.git'
+
+set :deploy_to, '/home/deploy/digital-ocean'
+
+set :linked_files, %w{config/database.yml}
+set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+
+namespace :deploy do
+
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      execute :touch, release_path.join('tmp/restart.txt')
+    end
+  end
+
+  after :finishing, 'deploy:cleanup'
+end
+
+set :stage, :production
+
+# Replace 127.0.0.1 with your server's IP address!
+server '107.170.54.97', user: 'deploy', roles: %w{web app}
