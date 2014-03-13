@@ -28,7 +28,7 @@ Dir.glob('lib/capistrano/tasks/*.cap').each { |r| import r }
 # usermod deploy -a -G rvm
 require 'capistrano/bundler'
 require 'capistrano/rails'
-require 'rvm/capistrano'
+require 'capistrano/rvm'
 
 set :rvm_type, :user 
 set :rvm_ruby_version, '2.0.0-p451'
